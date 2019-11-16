@@ -5,7 +5,7 @@ import 'package:themoviedb_flutter_bloc/repositories/movie_repository.dart';
 
 class MoviesBloc {
   final _movieRepository = MovieRepository();
-  final _movies = PublishSubject();
+  final _movies = PublishSubject<MovieItem>();
 
   Observable<MovieItem> get popularMovies => _movies.stream;
   

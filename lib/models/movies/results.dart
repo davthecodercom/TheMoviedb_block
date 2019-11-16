@@ -28,7 +28,7 @@ class Results {
 		original_title = map["original_title"],
 		genre_ids = List<int>.from(map["genre_ids"]),
 		title = map["title"],
-		vote_average = map["vote_average"],
+		vote_average = double.parse(map["vote_average"].toString()),
 		overview = map["overview"],
 		release_date = map["release_date"];
 
