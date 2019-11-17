@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb_flutter_bloc/blocs/movies_bloc.dart';
 import 'package:themoviedb_flutter_bloc/models/movies/movie_item.dart';
+import 'package:themoviedb_flutter_bloc/models/movies/results.dart';
+import 'package:themoviedb_flutter_bloc/ui/movie_detail.dart';
 
 class MovieList extends StatefulWidget {
 
@@ -61,7 +63,7 @@ class _MovieListState extends State<MovieList> {
                 'https://image.tmdb.org/t/p/w185${snapshot.data.results[index].poster_path}',
                 fit: BoxFit.cover,
               ),
-              onTap: null,//() => openDetailPelicula(context, snapshot.data.results[index]),
+              onTap: () => openDetailPelicula(context, snapshot.data.results[index]),
             )
             // child: Text('${snapshot.data.results[index].title}'),
           );
@@ -69,20 +71,20 @@ class _MovieListState extends State<MovieList> {
     );
   }
 
-  // openDetailPelicula(BuildContext context, [Results result]) {
-  //   Navigator.push(
-  //     context, 
-  //     MaterialPageRoute(builder: (context) {
-  //       return MovieDetail(
-  //         posterUrl: result.backdrop_path, 
-  //         description: result.overview, 
-  //         releaseDate: result.release_date, 
-  //         title: result.title, 
-  //         voteAverage: result.vote_average, 
-  //         movieId: result.id
-  //       );
-  //     })
-  //   );
-  // }
+  openDetailPelicula(BuildContext context, [Results result]) {
+    Navigator.push(
+      context, 
+      MaterialPageRoute(builder: (context) {
+        return MovieDetail(
+          posterUrl: result.backdrop_path, 
+          description: result.overview, 
+          releaseDate: result.release_date, 
+          title: result.title, 
+          voteAverage: result.vote_average, 
+          movieId: result.id
+        );
+      })
+    );
+  }
 
 }
