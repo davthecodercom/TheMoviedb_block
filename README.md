@@ -4,8 +4,9 @@ This repository is an app demo of how consuming TheMoviedb API in to a flutter A
 
 ## Dependencies:
 
+  - rxdart: [^0.22.6](https://pub.dev/packages/rxdart/versions/0.22.6)
   - http: [^0.12.0+2](https://pub.dev/packages/http/versions/0.12.0+2)
-  
+  - bloc: [^2.0.0](https://pub.dev/packages/bloc/versions/2.0.0)
   - url_launcher: [^5.2.5](https://pub.dev/packages/url_launcher/versions/5.2.5)
 
 ## Getting Started
